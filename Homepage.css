@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #FAF5EA; /* Very light yellow color */
+    font-family: Arial, sans-serif;
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Horizontally center content */
+    height: 100vh; /* Set the height of the body to full viewport height */
+  }
+  
+  .content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #FAF5EA;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  p {
+    color: #666;
+  }
+  .message-box {
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    text-align: center; /* Center-align the text within the div */
+  }
+  
+  input[type="text"] {
+    width: 60%; /* Adjust the width as needed */
+    max-width: 300px; /* Set a maximum width for larger screens */
+    padding: 5px;
+    background-color: #FAF5EA;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  

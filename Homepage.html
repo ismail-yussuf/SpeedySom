@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Light Yellow Background</title>
+<link rel="stylesheet" href="Homepage.css">
+<style>
+  /* Center the input within the message-box */
+  .message-box {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Make the message-box take the full viewport height */
+  }
+
+  input#user-input {
+    padding: 10px; /* Increase padding to make the input slightly bigger */
+    border: none; /* Remove the default border */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+  }
+</style>
+</head>
+<body>
+  <div class="message-box">
+    <input type="text" id="user-input">
+  </div>
+  <div id="generated-text"></div>
+  <script>
+    document.getElementById("user-input").addEventListener("keyup", function(event) {
+      if (event.key === "Enter") {
+        var userInput = document.getElementById("user-input").value;
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "http://localhost:8000/process", true); // Use the correct route
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+              // Get the OpenAI-generated text from the response
+              var generatedText = xhr.responseText;
+
+              // Display the generated text in the "generated-text" <div>
+              document.getElementById("generated-text").textContent = generatedText;
+            } else {
+              console.error("Request failed with status:", xhr.status);
+            }
+          }
+        };
+        xhr.send("userInput=" + encodeURIComponent(userInput));
+      }
+    });
+
+
+    // Function to display generated text in a specific element
+    function displayGeneratedText(text) {
+      var generatedTextElement = document.getElementById("generated-text");
+      if (generatedTextElement) {
+        generatedTextElement.textContent = text;
+      }
+    }
+</script>
+
+    
+    
+</body>
+</html>
