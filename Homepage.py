@@ -12,7 +12,7 @@ api_key = os.getenv("OPENAI_API_KEY")
 
 
 PORT = 8000
-DEFAULT_FILE = "login.html"  # Specify your default HTML file
+DEFAULT_FILE = "Index.html"  # Specify your default HTML file
 
 class CustomHandler(http.server.SimpleHTTPRequestHandler):
     def translate_path(self, path):
@@ -44,7 +44,7 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
             # Perform verification here
             if self.verify_credentials(username, password):
                 self.send_response(302)
-                self.send_header("Location", "/Index.html")
+                self.send_header("Location", "/Homepage.html")
                 self.end_headers()
             else:
                 self.send_response(403)

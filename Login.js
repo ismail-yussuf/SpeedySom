@@ -11,7 +11,7 @@ document.getElementById("login-form").addEventListener("submit", function(event)
       if (xhr.readyState === XMLHttpRequest.DONE) {
         if (xhr.status === 200) {
           document.getElementById("login-result").textContent = "Login successful!";
-          window.location.href = "/Index.html";
+          window.location.href = "/Homepage.html";
         } 
         else {
           document.getElementById("login-result").textContent = "Login failed. Please try again.";
