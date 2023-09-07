@@ -1,6 +1,6 @@
 Flask==2.1.1       # A micro web framework for building web applications.
 requests==2.26.0  # A library for making HTTP requests.
 python-dotenv==0.19.0  # A library for loading environment variables from a .env file.
-gunicorn==20.1.1  # A WSGI HTTP server for deploying Flask applications.
+gunicorn==20.1.0  # A WSGI HTTP server for deploying Flask applications.
 azure-identity==1.6.0  # Azure Identity library for authenticating with Azure services.
 azure-keyvault-secrets==4.0.0  # Azure Key Vault Secrets library for accessing secrets.
