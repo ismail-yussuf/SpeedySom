@@ -44,7 +44,7 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
             # Perform verification here
             if self.verify_credentials(username, password):
                 self.send_response(302)
-                self.send_header("Location", "/Homepage.html")
+                self.send_header("Location", "/Index.html")
                 self.end_headers()
             else:
                 self.send_response(403)
